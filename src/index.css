@@ -75,3 +75,18 @@ body {
   font-size: 15px;
 }
 
+.nav{
+  background-image: url('/images/bg-header-mobile.svg');
+  background-color: var(--Desaturated-Dark-Cyan);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 20vh;
+}
+
+@media (min-width: 1024px) {
+  .nav{
+    background-image: url('/images/bg-header-desktop.svg');
+  }
+}
+

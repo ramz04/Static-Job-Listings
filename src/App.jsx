@@ -1,7 +1,11 @@
+import JobList from "./components/JobList"
+
 function App() {
   return (
-    <div className="text-5xl">
-      This is the App
+    <div className="App">
+      <header className="nav">
+      </header>
+      <JobList />
     </div>
   )
 }
