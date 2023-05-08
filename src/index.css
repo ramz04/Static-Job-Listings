@@ -90,3 +90,96 @@ body {
   }
 }
 
+.jobs {
+  background-color:var(--Light-Grayish-Cyan);
+  padding: 2.5rem 0.8rem;
+}
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+.card--wrapper {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+
+.card--img img{
+  width: 50px;
+  margin-top: -18px;
+}
+
+.card--company{
+  color:var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.card--company-feat{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: white;
+}
+
+.new{
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.featured{
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.card--border{
+  border-left: 5px;
+  border-color: var(--Desaturated-Dark-Cyan);
+  border-style: solid;
+}
+
+.card--position{
+  color:var(--Very-Dark-Grayish-Cyan);
+  font-weight: 700;
+}
+
+.card--items {
+  color:var(--Dark-Grayish-Cyan);
+  word-spacing: 3px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.card--filter {
+  padding: 12px 0px;
+  color: var(--Desaturated-Dark-Cyan);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 20px;
+}
+
+.card--filter span {
+  background-color: var(--Light-Grayish-Cyan);
+  padding: 0.4rem;
+  border-radius: 5px;
+
+}

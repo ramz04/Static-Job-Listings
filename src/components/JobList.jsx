@@ -22,7 +22,7 @@ function JobList() {
     console.log(jsonData.tools)
 
   return (
-    <div>
+    <div className="jobs">
         <Filter />
         {jsonData.length === 0 ?
         (
@@ -30,13 +30,17 @@ function JobList() {
         ) : 
         (
             jsonData.map((i) => 
-            <main className="card" key={i.id}>
+            <main className={`card shadow-md ${i.featured && 'card--border'}`} key={i.id}>
             <section className="card--wrapper">
                 <div className="card--img">
                     <img src={i.logo} alt={i.company} />
                 </div>
                 <div className="card--company">
-                    <h3>{i.company}</h3>
+                    {i.company}
+                    <div className="card--company-feat">
+                        {i.new && <span className="new">NEW!</span>}
+                        {i.featured && <span className="featured">FEATURED</span>}
+                    </div>
                 </div>
                 <div className="card--position">
                     {i.position}
@@ -45,7 +49,10 @@ function JobList() {
                     {i.postedAt} · {i.contract} · {i.location}
                 </div>
             </section>
+            <hr />
             <section className="card--filter">
+                <span>{i.role}</span>
+                <span>{i.level}</span>
                 {i.languages ? (
                     i.languages.map((x,ind) => <span key={ind}>{x}</span>)
                 ): ''}
