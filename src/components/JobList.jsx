@@ -52,10 +52,10 @@ function JobList() {
                 <div className="filter--card shadow-md">
                     {filters.map(
                         (filter, ind) => 
-                        <span  className='filter--span' key={ind}>
+                        <div  className='filter--span' key={ind}>
                             <span>{filter}</span>
                             <div onClick={() => handleFilterClick(filter)}><img src='/images/icon-remove.svg' alt="" /></div>
-                        </span>   
+                        </div>   
                     )}
                     <button className='clear--btn' onClick={ClearFilter} >Clear</button>
                 </div>
