@@ -195,7 +195,7 @@ hr {
   .card {
     flex-direction: row;
     margin: 2rem 6rem;
-    padding: 0 1.7rem;
+    padding: 0.5rem 1.7rem;
     justify-content: space-between;
   }
 

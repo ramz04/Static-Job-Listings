@@ -6,20 +6,35 @@ import {useState , useEffect} from 'react'
 function JobList() {
 
     const [jsonData, setJsonData] = useState([])
+    const [filters, setFilters] = useState([])
     useEffect(() => {
         setJsonData(data)
     }, [])
 
+    const filterFunc = ({role, level, languages, tools}) => {
+        const tags =[role, level];
 
-    const langAndTools = []
-    if(jsonData.tools){
-        langAndTools.concat(jsonData.tools)
-    }
-    if(jsonData.languages){
-        langAndTools.concat(jsonData.languages)
+        if(filters.length === 0){
+            return true;
+        }
+
+        if(tools) {
+            tags.push(...tools)
+        }
+
+        if(languages) {
+            tags.push(...languages)
+        }
+
+        return tags.some(tag => filters.includes(tag))
     }
 
-    console.log(jsonData.tools)
+    const handleTagClick = (tag) => {
+        setFilters([...filters, tag])
+    }
+
+
+    const filteredJobs = jsonData.filter(filterFunc)
 
   return (
     <div className="jobs">
@@ -29,7 +44,7 @@ function JobList() {
             <p>Jobs are fetching ...</p>
         ) : 
         (
-            jsonData.map((i) => 
+            filteredJobs.map((i) => 
             <main className={`card shadow-md ${i.featured && 'card--border'}`} key={i.id}>
             <section className="card--wrapper">
                 <div className="card--img">
@@ -53,13 +68,13 @@ function JobList() {
             </section>
             <hr />
             <section className="card--filter">
-                <span>{i.role}</span>
-                <span>{i.level}</span>
+                <span onClick={() => handleTagClick(i.role)}>{i.role}</span>
+                <span onClick={() => handleTagClick(i.level)}>{i.level}</span>
                 {i.languages ? (
-                    i.languages.map((x,ind) => <span key={ind}>{x}</span>)
+                    i.languages.map((x,ind) => <span onClick={() => handleTagClick(x)} key={ind}>{x}</span>)
                 ): ''}
                 {i.tools ? (
-                    i.tools.map((z,ind) => <span key={ind}>{z}</span>)
+                    i.tools.map((z,ind) => <span onClick={() => handleTagClick(z)} key={ind}>{z}</span>)
                 ): ''}
             </section>
         </main>) 
