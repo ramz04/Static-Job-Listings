@@ -110,6 +110,13 @@ body {
   row-gap: 8px;
 }
 
+.card--content {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+
 .card--img img{
   width: 50px;
   margin-top: -18px;
@@ -163,7 +170,7 @@ body {
 }
 
 hr {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .card--filter {
@@ -182,4 +189,29 @@ hr {
   padding: 0.4rem;
   border-radius: 5px;
 
+}
+
+@media (min-width: 1024px) {
+  .card {
+    flex-direction: row;
+    margin: 2rem 6rem;
+    padding: 0 1.7rem;
+    justify-content: space-between;
+  }
+
+  .card--wrapper {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    column-gap: 20px;
+  }
+
+  .card--img img{
+    width: 100%;
+    margin-top: 0;
+  }
+
+  hr{
+    display: none;
+  }
 }

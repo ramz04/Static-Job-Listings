@@ -35,18 +35,20 @@ function JobList() {
                 <div className="card--img">
                     <img src={i.logo} alt={i.company} />
                 </div>
-                <div className="card--company">
-                    {i.company}
-                    <div className="card--company-feat">
-                        {i.new && <span className="new">NEW!</span>}
-                        {i.featured && <span className="featured">FEATURED</span>}
+                <div className='card--content'>
+                    <div className="card--company">
+                        {i.company}
+                        <div className="card--company-feat">
+                            {i.new && <span className="new">NEW!</span>}
+                            {i.featured && <span className="featured">FEATURED</span>}
+                        </div>
                     </div>
-                </div>
-                <div className="card--position">
-                    {i.position}
-                </div>
-                <div className="card--items">
-                    {i.postedAt} · {i.contract} · {i.location}
+                    <div className="card--position">
+                        {i.position}
+                    </div>
+                    <div className="card--items">
+                        {i.postedAt} · {i.contract} · {i.location}
+                    </div>
                 </div>
             </section>
             <hr />
