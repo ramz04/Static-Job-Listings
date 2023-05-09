@@ -1,6 +1,8 @@
-function Filter() {
+
+// eslint-disable-next-line react/prop-types
+function Filter({filter}) {
   return (
-    <div>
+    <div className="filter--card">
         
     </div>
   )

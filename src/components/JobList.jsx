@@ -1,4 +1,3 @@
-import Filter from "./Filter"
 import data from '../assets/data.json'
 import {useState , useEffect} from 'react'
 
@@ -30,15 +29,38 @@ function JobList() {
     }
 
     const handleTagClick = (tag) => {
+        if(filters.includes(tag)) return;
         setFilters([...filters, tag])
     }
 
 
     const filteredJobs = jsonData.filter(filterFunc)
 
+    const handleFilterClick = (passedFilter) => {
+        setFilters(filters.filter((f) => f !== passedFilter))
+
+    }
+
+    const ClearFilter = () => {
+        setFilters([])
+    }
+
   return (
     <div className="jobs">
-        <Filter />
+        <div>
+            {filters.length > 0 && 
+                <div className="filter--card shadow-md">
+                    {filters.map(
+                        (filter, ind) => 
+                        <span  className='filter--span' key={ind}>
+                            <span>{filter}</span>
+                            <div onClick={() => handleFilterClick(filter)}><img src='/images/icon-remove.svg' alt="" /></div>
+                        </span>   
+                    )}
+                    <button className='clear--btn' onClick={ClearFilter} >Clear</button>
+                </div>
+            }
+        </div>
         {jsonData.length === 0 ?
         (
             <p>Jobs are fetching ...</p>

@@ -75,6 +75,10 @@ body {
   font-size: 15px;
 }
 
+.App{
+  background-color: var(--Light-Grayish-Cyan);
+}
+
 .nav{
   background-image: url('/images/bg-header-mobile.svg');
   background-color: var(--Desaturated-Dark-Cyan);
@@ -191,6 +195,74 @@ hr {
 
 }
 
+.filter--card {
+  padding: 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 20px;
+  border-radius: 5px;
+}
+
+.filter--span {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter--span span {
+  background-color: var(--Light-Grayish-Cyan);
+  padding: 0.4rem;
+  border-radius: 5px 0 0 5px;
+  font-weight: 700;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.filter--span div {
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 0.66rem 0.5rem;
+  border-radius: 0 5px 5px 0;
+}
+
+.filter--span div:hover{
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  transition: var(--Transition);
+}
+
+.clear--btn{
+  color: var(--Dark-Grayish-Cyan);
+  margin-left: auto;
+  position: relative;
+}
+
+.clear--btn::after{
+  content: '';
+  position:absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: bottom left;
+  color: var(--Desaturated-Dark-Cyan);
+  background-color: var(--Desaturated-Dark-Cyan);
+  transform: scaleX(0);
+}
+
+.clear--btn:hover{
+  color: var(--Desaturated-Dark-Cyan);
+  transition: var(--Transition);
+}
+
+.clear--btn:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: var(--Transition) ease-in-out;
+}
+
 @media (min-width: 1024px) {
   .card {
     flex-direction: row;
@@ -213,5 +285,9 @@ hr {
 
   hr{
     display: none;
+  }
+
+  .filter--card {
+    margin: 2rem 6rem;
   }
 }
